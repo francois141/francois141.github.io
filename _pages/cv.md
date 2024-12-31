@@ -9,12 +9,5 @@ redirect_from:
 
 {% include base_path %}
 
-Education
-======
-* M.S. in computer science, ETH Zürich 2022-2024
-* B.S. in computer science, ETH Zürich, 2019-2022
 
-Work experience
-======
-* Summer 2024: Citadel
-  * Software engineer intern
+You can download my CV here: [Current CV](https://francois141.github.io/files/cv.pdf)
