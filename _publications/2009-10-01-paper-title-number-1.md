@@ -3,7 +3,7 @@ title: "Dirigent"
 collection: publications
 category: manuscripts
 permalink: /publication/dirigent
-date: 2024
+date: 2024-11-03
 paperurl: 'https://arxiv.org/pdf/2404.16393'
 codeurl: 'https://arxiv.org/pdf/2404.16393'
 venue: 'SOSP'
