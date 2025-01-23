@@ -22,9 +22,11 @@ Step 2: Download a specific linux kernel
 
 By default, dynamic modules are disabled in the Debian image and we can't compile a kernel modules since the kernel file don't have a build folder. To address this issue, we can download another release that support dynamic modules. For this tutorial, we use the version v3.6.1
 
+```bash
 echo "starfive" | sudo -S su
 wget https://github.com/starfive-tech/VisionFive2/releases/download/VF2_v3.6.1/Image.gz
 cp Image.gz /boot/new_kernel
+```
 
 
 Step 3: Add the new kernel in the boot menu
