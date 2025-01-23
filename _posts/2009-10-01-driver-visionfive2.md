@@ -12,11 +12,11 @@ In this article, we will see how to introduce a custom driver into the Linux ker
 
 ## Step 1: Set Up Debian on the VisionFive2 Board
 
-Take your microSD card, download the image and Balena Etcher, and flash it. This step is straightforward. Then you can connect using `user` as the username and `starfive` as the password.
+Take your microSD card, download the image and Balena Etcher, and flash it. This step is straightforward. Then you can connect using `user` as the username and `starfive` as the password. Personally I connect either with UART or through SSH.
 
 ## Step 2: Download a Specific Linux Kernel
 
-By default, dynamic modules are disabled in the Debian image, and we can't compile kernel modules because the kernel file doesn't have a build folder. To address this issue, we can download another release that supports dynamic modules. For this tutorial, we use version `v3.6.1`.
+By default, dynamic modules are disabled with the Debian distribution, and we can't compile kernel modules because the kernel sources don't have a build folder. To address this issue, we download another release that supports dynamic modules. For this tutorial, we use version `v3.6.1` and place the new kernel in the boot folder.
 
 ```bash
 echo "starfive" | sudo -S su
@@ -26,7 +26,7 @@ cp Image.gz /boot/new_kernel
 
 ## Step 3: Add the New Kernel to the Boot Menu
 
-Now that we have the new kernel downloaded on the board, the next step consists of placing the kernel in the `/boot` folder and adding a new entry in the bootloader.
+Now that we have the new kernel downloaded on the board and located in the boot folder, the next step consists of placing a new entry in the bootloader configuration.
 
 ```bash
 label l2
@@ -44,7 +44,7 @@ Now you can reboot the board. In the bootloader menu, press `3`. If the kernel d
 
 ## Step 5: Generate the Module Files
 
-On the board, execute the following lines (this will take around two hours). It is important to use the exact same commit as the kernel we downloaded.
+When the step 4 workd, the next step consists of installing the kernel sources to generate the new driver (this will take around two hours). It is important to **use the exact same commit as the kernel we downloaded**.
 
 ```bash
 git clone https://github.com/starfive-tech/linux/ --branch visionfive --single-branch --depth 1
