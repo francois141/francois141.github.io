@@ -1,7 +1,7 @@
 ---
 title: 'Add a linux driver on the VisionFive2 board'
 date: 2012-08-14
-permalink: /visionfive2-board/
+permalink: /posts/2012/08/blog-post-1/
 tags:
   - VisionFive2 board
   - Linux kernel
