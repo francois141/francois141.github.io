@@ -1,7 +1,7 @@
 ---
 title: "Dirigent"
 collection: publications
-category: manuscripts
+category: conferences
 permalink: /publication/dirigent
 date: 2024-11-03
 paperurl: 'https://arxiv.org/pdf/2404.16393'
