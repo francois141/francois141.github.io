@@ -11,15 +11,5 @@ main:
   - title: "CV"
     url: /cv/
 
-  - title: "Blog Posts"
-    url: /year-archive/
-
-
-  - title: "Teaching"
-    url: /teaching/    
-    
-  - title: "Portfolio"
-    url: /portfolio/
-    
-  - title: "Guide"
-    url: /markdown/
+  - title: "Visionfive2 Board custom driver"
+    url: /visionfive2-board/    
