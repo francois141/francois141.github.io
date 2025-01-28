@@ -60,6 +60,8 @@ make modules_install
 
 The last step consists of writing the example kernel module we use in this tutorial and compiling it. The name of the file should be ```driver.c``` As a final step, we need to add it to the kernel.
 
+The driver:
+
 ```c
 #include <linux/init.h>
 #include <linux/module.h>
@@ -108,7 +110,9 @@ module_init(driver_init);
 module_exit(driver_exit);
 ```
 
-```Makefile
+The makefile:
+
+```bash
 obj-m += driver.o
 
 all:
@@ -117,6 +121,7 @@ all:
 clean:
 	make -C ../linux M=$(PWD) clean
 ```
+
 ```bash
 make all
 sudo insmod module.ko
