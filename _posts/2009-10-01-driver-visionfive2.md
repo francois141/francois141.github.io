@@ -20,7 +20,7 @@ By default, dynamic modules are disabled with the Debian distribution, and we ca
 
 ```bash
 wget https://github.com/starfive-tech/VisionFive2/releases/download/VF2_v3.6.1/Image.gz
-cp Image.gz /boot/new_kernel
+sudo cp Image.gz /boot/new_kernel
 ```
 
 ## Step 3: Add the New Kernel to the Boot Menu
@@ -53,7 +53,7 @@ git checkout 05533e9c31d6f0da20efc2d436a3b0f6d516ed4b
 
 sudo cp /boot/config-5.15.0-starfive .config
 make -j4 all
-make modules_install
+sudo make modules_install
 ```
 
 ## Step 6: Compile and Insert the Module
@@ -101,6 +101,7 @@ clean:
 ```bash
 make all
 sudo insmod module.ko
+sudo dmesg | tail -n 1
 ```
 
 If you see the output, congratulations! You have successfully added a custom (minimal) driver to the VisionFive2 board!
