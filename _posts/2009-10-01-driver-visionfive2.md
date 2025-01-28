@@ -19,7 +19,6 @@ Take your microSD card, download the image and Balena Etcher, and flash it. This
 By default, dynamic modules are disabled with the Debian distribution, and we can't compile kernel modules because the kernel sources don't have a build folder. To address this issue, we download another release that supports dynamic modules. For this tutorial, we use version `v3.6.1` and place the new kernel in the boot folder.
 
 ```bash
-echo "starfive" | sudo -S su
 wget https://github.com/starfive-tech/VisionFive2/releases/download/VF2_v3.6.1/Image.gz
 cp Image.gz /boot/new_kernel
 ```
@@ -52,18 +51,76 @@ cd linux
 git fetch --depth 1 origin 05533e9c31d6f0da20efc2d436a3b0f6d516ed4b
 git checkout 05533e9c31d6f0da20efc2d436a3b0f6d516ed4b
 
-make starfive_visionfive2_defconfig
+sudo cp /boot/config-5.15.0-starfive .config
 make -j4 all
 make modules_install
 ```
 
 ## Step 6: Compile and Insert the Module
 
-The last step consists of cloning the example kernel module we use in this tutorial and compiling it. As a final step, we need to add it to the kernel.
+The last step consists of writing the example kernel module we use in this tutorial and compiling it. As a final step, we need to add it to the kernel.
 
+
+```c
+#include <linux/init.h>
+#include <linux/module.h>
+#include <linux/fs.h>
+#include <linux/uaccess.h>
+
+#define MYDEV_NAME "miralis driver"
+
+MODULE_LICENSE("GPL");
+
+static struct file_operations fops = {
+    .owner = THIS_MODULE, 
+};
+
+static int __init driver_init(void) /* Constructor */
+{
+    printk(KERN_INFO "Loading driver...\n");
+
+    int err;
+    err = register_chrdev(0, MYDEV_NAME, &fops);
+
+    if(err < 0)
+    {
+        printk(KERN_ERR "Failed to register device!\n");
+        return err;
+    }
+
+    printk(KERN_INFO "Successfully registered miralis device.\n");  
+
+     asm volatile (
+        "li a6, 3\n"           // Miralis ABI FID: benchmark final result
+        "li a7, 0x08475bcd\n"  // Miralis ABI EID
+        "ecall\n"
+    );
+
+    return 0;
+}
+
+static void __exit driver_exit(void) /* Destructor */
+{
+    unregister_chrdev(0, MYDEV_NAME); 
+    printk(KERN_INFO "Goodbye from driver!\n");
+}
+
+module_init(driver_init);
+module_exit(driver_exit);
+```
+
+```Makefile
+obj-m += driver.o
+
+CROSS_COMPILE = riscv64-unknown-linux-gnu-
+
+all:
+	make -C ../linux M=$(PWD) modules ARCH=riscv CROSS_COMPILE=$(CROSS_COMPILE)
+
+clean:
+	make -C ../linux M=$(PWD) clean
+```
 ```bash
-echo "starfive" | sudo -S su
-git clone <ADD URL>
 make all
 insmod module.ko
 ```
