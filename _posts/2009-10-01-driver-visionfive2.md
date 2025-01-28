@@ -58,8 +58,7 @@ make modules_install
 
 ## Step 6: Compile and Insert the Module
 
-The last step consists of writing the example kernel module we use in this tutorial and compiling it. As a final step, we need to add it to the kernel.
-
+The last step consists of writing the example kernel module we use in this tutorial and compiling it. The name of the file should be ```driver.c``` As a final step, we need to add it to the kernel.
 
 ```c
 #include <linux/init.h>
@@ -112,17 +111,15 @@ module_exit(driver_exit);
 ```Makefile
 obj-m += driver.o
 
-CROSS_COMPILE = riscv64-unknown-linux-gnu-
-
 all:
-	make -C ../linux M=$(PWD) modules ARCH=riscv CROSS_COMPILE=$(CROSS_COMPILE)
+	make -C /lib/modules/5.15.0/build M=$(PWD) modules
 
 clean:
 	make -C ../linux M=$(PWD) clean
 ```
 ```bash
 make all
-insmod module.ko
+sudo insmod module.ko
 ```
 
 If you see the output, congratulations! You have successfully added a custom (minimal) driver to the VisionFive2 board!
