@@ -16,5 +16,5 @@ Recently, I had to write a new kernel driver on the VisionFive2 board and the pr
 
 **Publications**
 
-- [SOSP'24 - Dirigent: Lightweight Serverless Orchestration](https://scholar.google.com/citations?user=JxRxHlEAAAAJ&hl=fr)
+- [SOSP'24 - Dirigent: Lightweight Serverless Orchestration](https://dl.acm.org/doi/pdf/10.1145/3694715.3695966?trk=public_post_comment-text)
 - [HotOS'25 - Lightweight Hypervisor Verification: Putting the Hardware Burger on a Diet](https://miralis-firmware.github.io/papers/hyper-verif.pdf)
