@@ -14,7 +14,12 @@ Prior to that, I was a research assistant at EPFL, working in the DCSL Group on 
 
 Recently, I had to write a new kernel driver on the VisionFive2 board and the process was quite tedious.  Therefore I wrote a tutorial on how to do it easily: [link to the tutorial](https://francois141.github.io/visionfive2-board-custom-kernel/)
 
+**In submission**
+
+- The Design and Implementation of a Virtual Firmware Monitor
+
 **Publications**
 
-- [SOSP'24 - Dirigent: Lightweight Serverless Orchestration](https://dl.acm.org/doi/pdf/10.1145/3694715.3695966?trk=public_post_comment-text)
 - [HotOS'25 - Lightweight Hypervisor Verification: Putting the Hardware Burger on a Diet](https://miralis-firmware.github.io/papers/hyper-verif.pdf)
+- [SOSP'24 - Dirigent: Lightweight Serverless Orchestration](https://dl.acm.org/doi/pdf/10.1145/3694715.3695966?trk=public_post_comment-text)
+
