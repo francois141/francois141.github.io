@@ -28,7 +28,8 @@ author:
   location         : "Stanford, CA"
   employer         : "Stanford University"
   uri              : # URL
-  email            : "fcosta@ethz.ch" 
+  email            : "francois.costa@stanford.edu"
+  email_display    : "francois [dot] costa [at] stanford [dot] edu"
 
   # Academic websites
   arxiv            : # URL - Update with the correct link to your profile
