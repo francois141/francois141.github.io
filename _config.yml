@@ -24,9 +24,9 @@ author:
   avatar           : "profile.png"
   name             : "François Costa"
   pronouns         : # example: "she/her"  
-  bio              : "C/C++ Low latency engineer @ Mathrix"
-  location         : "Zug"
-  employer         : "Mathrix"
+  bio              : "PhD student at Stanford University"
+  location         : "Stanford, CA"
+  employer         : "Stanford University"
   uri              : # URL
   email            : "fcosta@ethz.ch" 
 
