@@ -41,6 +41,8 @@
   doi         = {10.1145/3713082.3730373},
   abstract    = {Hypervisors are an essential part of our computing infrastructure, yet ensuring their correctness remains a significant challenge for the community. While several hypervisors have been formally verified using traditional methods, they have typically required a huge effort and significant input from verification experts. With the increasing diversity of hypervisors, driven by open hardware and custom ISAs, there is a growing need for more accessible approaches that can be used by non-experts. This paper advocates for the use of lightweight formal methods for verifying hypervisors. We conduct a top-down analysis of hypervisors and simple correctness criteria on the lock-step execution of the virtual and host machines. By relating the two executions, these criteria transform the task of verifying higher-level properties, such as memory isolation, into simpler conditions that can often be discharged automatically. We demonstrate the applicability of our approach by developing a verification framework for a RISC-V hypervisor, leveraging the Kani Rust model checker and a Sail specification of the RISC-V architecture. Using our tool, we identified and corrected 21 bugs and proved several properties, including memory isolation, with minimal human effort.},
   pdf         = {https://miralis-firmware.github.io/papers/hyper-verif.pdf},
+  code        = {https://github.com/charlycst/miralis},
+  website     = {https://miralis-firmware.github.io},
   selected    = {true}
 }
 
