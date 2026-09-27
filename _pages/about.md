@@ -10,7 +10,7 @@ profile:
   image_circular: false # crops the image to make it circular
   more_info: >
     <p>Stanford, CA</p>
-    <p>francois [dot] costa [at] stanford [dot] edu</p>
+    <p><a href="mailto:francois.costa@stanford.edu">francois.costa@stanford.edu</a></p>
 
 selected_papers: true # includes a list of papers marked as "selected={true}"
 social: true # includes social icons at the bottom of the page
