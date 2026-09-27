@@ -1,0 +1,4 @@
+# Map co-author last names (lowercase) to their websites so they are linked on the publications page, e.g.:
+# "lastname":
+#   - firstname: ["First", "F."]
+#     url: https://example.com/

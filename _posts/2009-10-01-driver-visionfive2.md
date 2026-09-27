@@ -1,12 +1,13 @@
 ---
-title: 'Add a linux driver on the VisionFive2 board'
+layout: post
+title: "Add a Custom Linux Driver on the VisionFive2 Board"
 date: 2012-08-14
 permalink: /visionfive2-board-custom-kernel/
+description: How to introduce a custom driver into the Linux kernel of the VisionFive2 board.
 tags:
   - VisionFive2 board
   - Linux kernel
 ---
-# Add a Custom Linux Driver on the VisionFive2 Board
 
 In this article, we will see how to introduce a custom driver into the Linux kernel of the VisionFive2 board.
 

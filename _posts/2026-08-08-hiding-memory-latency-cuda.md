@@ -1,15 +1,21 @@
 ---
-title: 'Hiding Memory Latency in CUDA: Asynchronous Loads and Software Pipelines'
+layout: post
+published: false # not built into the site; set to true (or remove this line) to publish
+title: "Hiding Memory Latency in CUDA: Asynchronous Loads and Software Pipelines"
 date: 2026-08-08
 permalink: /cuda-asynchronous-loads-software-pipelines/
+description: How cp.async, multi-stage shared-memory ring buffers and register-level pipelines keep a CUDA GEMM busy while data moves through the memory hierarchy.
 tags:
   - CUDA
   - GPU programming
   - Performance optimization
   - Tensor Cores
+mermaid:
+  enabled: true
+  zoomable: true
+toc:
+  sidebar: left
 ---
-
-# Hiding Memory Latency in CUDA: Asynchronous Loads and Software Pipelines
 
 High-performance CUDA kernels are rarely limited by a single instruction. More often, performance comes down to whether the GPU can keep useful work in flight while data moves through the memory hierarchy.
 

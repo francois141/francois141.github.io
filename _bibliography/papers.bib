@@ -1,0 +1,61 @@
+---
+---
+
+@inproceedings{costa2026upal,
+  abbr        = {ECCV},
+  bibtex_show = {true},
+  title       = {Unified and Efficient Point-Line Local Features},
+  author      = {Costa, François and Kreft, Raphael and Goedeke, Eckhard and Möller, Felix and Shah, Hardik and Rajaraman, Ramanathan and Liu, Shaohui and Pautrat, Rémi and Pollefeys, Marc},
+  booktitle   = {European Conference on Computer Vision (ECCV)},
+  year        = {2026},
+  abstract    = {Multi-view computer vision pipelines typically rely on accurate sparse keypoints and robust descriptors. While incorporating line features has shown clear benefits for matching and pose estimation, existing point-line approaches remain inefficient: they detect points and lines separately, use increasingly heavy networks, and depend on CPU-bound heuristics that hinder real-time performance. We introduce a Unified Efficient Points and Lines (UPAL) feature extractor that jointly extracts keypoints, line segments, and feature descriptors within a single lightweight architecture. A shared backbone provides common representations that feed different branches for point and line features. Line segments are recovered through an accelerated post-processing stage, an enhanced and highly efficient variant of the LSD algorithm. UPAL matches or exceeds state-of-the-art performance in both point and line applications while significantly reducing computational cost, achieving, for instance, a 4x speedup and 10x smaller memory footprint over the ALIKED + DeepLSD pipeline. Code is publicly available at https://github.com/francois141/upal.},
+  arxiv       = {2608.19894},
+  code        = {https://github.com/francois141/upal},
+  selected    = {true}
+}
+
+@inproceedings{castes2025vfm,
+  abbr        = {SOSP},
+  bibtex_show = {true},
+  title       = {The Design and Implementation of a Virtual Firmware Monitor},
+  author      = {Castes, Charly and Costa, François and Kalani, Neelu S. and Roscoe, Timothy and Foster, Nate and Bourgeat, Thomas and Bugnion, Edouard},
+  booktitle   = {Proceedings of the ACM SIGOPS 31st Symposium on Operating Systems Principles (SOSP '25)},
+  year        = {2025},
+  publisher   = {Association for Computing Machinery},
+  doi         = {10.1145/3731569.3764826},
+  abstract    = {Low level software is often granted high privilege, yet this need not be the case. Although vendor firmware plays a critical role in the operation and management of the machine, most of its functionality does not require unfettered access to security critical software and data. In this paper we demonstrate that vendor firmware can be safely and efficiently deprivileged, decoupling its functionality from isolation enforcement. We introduce a new class of systems, called virtual firmware monitors, that run unmodified vendor firmware in userspace through software-based virtualization of the highest privilege mode of the application CPU. We describe the implementation of Miralis, a RISC-V virtual firmware monitor, and develop three security policies to protect the OS, enclaves, and confidential VMs from malicious firmware. We verify key components of Miralis, such as instruction emulation and memory protection, through exhaustive symbolic execution. Finally, we demonstrate that Miralis can effectively virtualize unmodified vendor firmware for two hardware platforms with no performance degradation compared to native execution.},
+  pdf         = {https://charlycst.github.io/papers/virtual-firmware-monitor.pdf},
+  code        = {https://github.com/charlycst/miralis},
+  website     = {https://miralis-firmware.github.io},
+  selected    = {true}
+}
+
+@inproceedings{castes2025hyperverif,
+  abbr        = {HotOS},
+  bibtex_show = {true},
+  title       = {Lightweight Hypervisor Verification: Putting the Hardware Burger on a Diet},
+  author      = {Castes, Charly and Costa, François and Foster, Nate and Bourgeat, Thomas and Bugnion, Edouard},
+  booktitle   = {Workshop on Hot Topics in Operating Systems (HotOS '25)},
+  year        = {2025},
+  publisher   = {Association for Computing Machinery},
+  doi         = {10.1145/3713082.3730373},
+  abstract    = {Hypervisors are an essential part of our computing infrastructure, yet ensuring their correctness remains a significant challenge for the community. While several hypervisors have been formally verified using traditional methods, they have typically required a huge effort and significant input from verification experts. With the increasing diversity of hypervisors, driven by open hardware and custom ISAs, there is a growing need for more accessible approaches that can be used by non-experts. This paper advocates for the use of lightweight formal methods for verifying hypervisors. We conduct a top-down analysis of hypervisors and simple correctness criteria on the lock-step execution of the virtual and host machines. By relating the two executions, these criteria transform the task of verifying higher-level properties, such as memory isolation, into simpler conditions that can often be discharged automatically. We demonstrate the applicability of our approach by developing a verification framework for a RISC-V hypervisor, leveraging the Kani Rust model checker and a Sail specification of the RISC-V architecture. Using our tool, we identified and corrected 21 bugs and proved several properties, including memory isolation, with minimal human effort.},
+  pdf         = {https://miralis-firmware.github.io/papers/hyper-verif.pdf},
+  selected    = {true}
+}
+
+@inproceedings{cvetkovic2024dirigent,
+  abbr        = {SOSP},
+  bibtex_show = {true},
+  title       = {Dirigent: Lightweight Serverless Orchestration},
+  author      = {Cvetković, Lazar and Costa, François and Djokic, Mihajlo and Friedman, Michal and Klimovic, Ana},
+  booktitle   = {Proceedings of the ACM SIGOPS 30th Symposium on Operating Systems Principles (SOSP '24)},
+  year        = {2024},
+  publisher   = {Association for Computing Machinery},
+  doi         = {10.1145/3694715.3695966},
+  abstract    = {While Function as a Service (FaaS) platforms can initialize function sandboxes on worker nodes in 10-100s of milliseconds, the latency to schedule functions in real FaaS clusters can be orders of magnitude higher. The current approach of building FaaS cluster managers on top of legacy orchestration systems (e.g., Kubernetes) leads to high scheduling delays when clusters experience high sandbox churn, which is common for FaaS. Generic cluster managers use many hierarchical abstractions and internal components to manage and reconcile cluster state with frequent persistent updates. This becomes a bottleneck for FaaS since the cluster state frequently changes as sandboxes are created on the critical path of requests. Based on our root cause analysis of performance issues in existing FaaS cluster managers, we propose Dirigent, a clean-slate system architecture for FaaS orchestration with three key principles. First, Dirigent optimizes internal cluster manager abstractions to simplify state management. Second, it eliminates persistent state updates on the critical path of function invocations, leveraging the fact that FaaS abstracts sandbox locations from users to relax exact state reconstruction guarantees. Finally, Dirigent runs monolithic control and data planes to minimize internal communication overheads and maximize throughput. We compare Dirigent to state-of-the-art FaaS platforms and show that Dirigent reduces 99th percentile per-function scheduling latency for a production workload by 2.79x compared to AWS Lambda. Dirigent can spin up 2500 sandboxes per second at low latency, which is 1250x more than Knative.},
+  arxiv       = {2404.16393},
+  pdf         = {https://dl.acm.org/doi/pdf/10.1145/3694715.3695966},
+  code        = {https://github.com/eth-easl/dirigent},
+  selected    = {true}
+}
