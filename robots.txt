@@ -1,0 +1,4 @@
+User-agent: *
+Disallow:
+
+Sitemap: https://francois141.github.io/sitemap.xml
